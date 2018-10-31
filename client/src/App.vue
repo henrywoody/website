@@ -81,6 +81,7 @@ h2 {
 
 a {
     color: var(--color);
+    transition: var(--dark-mode-transition);
 }
 
 button {

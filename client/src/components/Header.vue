@@ -41,6 +41,11 @@ export default {
                     title: "Projects",
                     to: "/projects",
                     exact: false
+                },
+                {
+                    title: "Links",
+                    to: "/links",
+                    exact: false
                 }
             ]
         }
