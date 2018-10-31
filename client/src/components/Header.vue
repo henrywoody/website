@@ -4,11 +4,14 @@
             <router-link exact to="/" class="site-title">Henry Woody</router-link>
             <nav>
                 <ul>
-                    <li>
-                        <router-link exact to="/" title="Home">Home</router-link>
-                    </li>
-                    <li>
-                        <router-link to="/projects" title="Projects">Projects</router-link>
+                    <li v-for="link in links" v-bind:key="link.title">
+                        <router-link
+                            v-bind:exact="link.exact"
+                            v-bind:to="link.to"
+                            v-bind:title="link.title"
+                        >
+                            {{ link.title }}
+                        </router-link>
                     </li>
                 </ul>
             </nav>
@@ -25,6 +28,22 @@ export default {
     name: "Header",
     components: {
         DarkModeManager
+    },
+    data() {
+        return {
+            links: [
+                {
+                    title: "Home",
+                    to: "/",
+                    exact: true
+                },
+                {
+                    title: "Projects",
+                    to: "/projects",
+                    exact: false
+                }
+            ]
+        }
     }
 }
 </script>
@@ -42,7 +61,7 @@ header {
 
 header, a {
     color: var(--inverted-color);
-    
+
     transition: var(--dark-mode-transition);
 }
 
