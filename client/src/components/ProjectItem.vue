@@ -29,7 +29,8 @@ export default {
     padding: 1rem;
     margin-bottom: 1.5rem;
 
-    transition: .3s;
+    --tran-timing: .3s;
+    transition: var(--tran-timing) box-shadow, var(--tran-timing) transform;
 }
 
 .project-item:hover {
@@ -37,7 +38,7 @@ export default {
     transform: var(--box-shadow-translate);
     cursor: pointer;
 
-    transition: .15s;
+    --tran-timing: .15s;
 }
 
 .project-item:active {

@@ -142,9 +142,10 @@ export default {
 
 <style scoped>
 main {
-    width: 100vw;
-    height: 100vh;
+    max-width: 100vw;
+    height: calc(100vh - var(--header-height));
 }
+
 .welcome {
     position: absolute;
     top: 40%;
@@ -164,6 +165,8 @@ main {
         1px -1px 0 var(--background-color),
         -1px 1px 0 var(--background-color),
         1px 1px 0 var(--background-color);
+
+    transition: var(--dark-mode-transition), var(--dark-mode-transition-time) text-shadow;
 }
 
 canvas {
