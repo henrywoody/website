@@ -35,11 +35,17 @@ export default {
 
             this.counter = 0;
             this.phaseDuration = 750;
-            this.phases = ["#ffffff", "#ffd700"];
+            const isDarkModeOn = window.localStorage.getItem("isDarkModeOn") === "true";
+            if (isDarkModeOn) {
+                this.phases = ["#ffffff", "#ffd700"];
+                this.fadeFactor = 1.7;
+            } else {
+                this.phases = ["#16b2ff", "#ffd700"];
+                this.fadeFactor = 1.5;
+            }
             this.phaseIndex = 0;
             this.maxPhases = 2;
             this.totalPhases = 0;
-            this.fadeFactor = 1.2;
             this.refreshTime = Math.round(Math.log(this.stepSize)) + 1;
 
             this.addPointSet();
@@ -111,7 +117,7 @@ export default {
                 if (pointSet.points.length <= this.maxPointSetSize && Math.random() < this.splitProb) {
                     return {
                         ...pointSet,
-                        alpha: pointSet.alpha / 2,
+                        alpha: pointSet.alpha / this.fadeFactor,
                         points: pointSet.points.reduce((a,e) => a.concat([
                             {x: e.x, y: e.y, d: e.d + this.splitAngleDiff},
                             {x: e.x, y: e.y, d: e.d - this.splitAngleDiff}
