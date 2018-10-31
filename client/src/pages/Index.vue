@@ -40,7 +40,7 @@ export default {
                 this.phases = ["#ffffff", "#ffd700"];
                 this.fadeFactor = 1.7;
             } else {
-                this.phases = ["#16b2ff", "#ffd700"];
+                this.phases = ["#222222", "#16b2ff"];
                 this.fadeFactor = 1.5;
             }
             this.phaseIndex = 0;
