@@ -4,13 +4,20 @@ import Index from './pages/Index.vue';
 import Projects from './pages/Projects.vue';
 import Links from './pages/Links.vue';
 
+import projectRoutes from './pages/projects/routes';
+
 Vue.use(Router);
+
+const baseRoutes = [
+    {path: "/", component: Index},
+    {path: "/projects", component: Projects},
+    {path: "/links", component: Links},
+]
 
 export default new Router({
     mode: "history",
     routes: [
-        {path: "/", component: Index},
-        {path: "/projects", component: Projects},
-        {path: "/links", component: Links},
+        ...baseRoutes,
+        ...projectRoutes,
     ]
 });

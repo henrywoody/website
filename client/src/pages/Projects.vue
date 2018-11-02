@@ -58,6 +58,16 @@ export default {
                     title: "Artificial Life",
                     projects: [
                         {
+                            title: "Holland",
+                            description: "A genetic algorithm for any application",
+                            path: "/projects/holland"
+                        },
+                        {
+                            title: "Boids",
+                            description: "Birds of a feather...",
+                            path: "/projects/boids"
+                        },
+                        {
                             title: "One Dimensional Cellular Automata",
                             description: "Life at its simplest",
                             path: "/projects/1d-cellular-automata"
@@ -66,16 +76,6 @@ export default {
                             title: "Two Dimensional Cellular Automata",
                             description: "Things get a bit more complex",
                             path: "/projects/2d-cellular-automata"
-                        },
-                        {
-                            title: "Boids",
-                            description: "Birds of a feather...",
-                            path: "/projects/boids"
-                        },
-                        {
-                            title: "Holland",
-                            description: "A genetic algorithm for any application",
-                            path: "/projects/holland"
                         }
                     ]
                 }
