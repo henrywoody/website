@@ -55,7 +55,8 @@ body {
     --dark-mode-transition-time: .3s;
     --dark-mode-transition:
         var(--dark-mode-transition-time) color,
-        var(--dark-mode-transition-time) background-color;
+        var(--dark-mode-transition-time) background-color,
+        var(--dark-mode-transition-time) fill;
     transition: var(--dark-mode-transition);
 }
 
