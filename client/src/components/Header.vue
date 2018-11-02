@@ -55,7 +55,7 @@ export default {
 
 <style scoped>
 header {
-    background-color: var(--inverted-background-color);
+    background-color: var(--header-background-color);
     height: var(--header-height);
     padding: 0 1rem;
     display: flex;
@@ -65,7 +65,7 @@ header {
 }
 
 header, a {
-    color: var(--inverted-color);
+    color: var(--header-color);
 
     transition: var(--dark-mode-transition);
 }

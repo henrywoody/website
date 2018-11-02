@@ -25,11 +25,13 @@ export default {
 
 <style>
 body {
-    --color: #222;
+    --color: #333;
     --inverted-color: #eee;
     --background-color: #fff;
-    --inverted-background-color: #222;
+    --inverted-background-color: #333;
     --shadow-color: #777;
+    --header-color: var(--inverted-color);
+    --header-background-color: var(--inverted-background-color);
 
     --shadow-offset: .1rem;
     --shadow-blur: .2rem;
@@ -59,10 +61,12 @@ body {
 
 body.dark {
     --color: #eee;
-    --inverted-color: #222;
-    --background-color: #222;
+    --inverted-color: #333;
+    --background-color: #333;
     --inverted-background-color: #fff;
-    --shadow-color: #aaa;
+    --shadow-color: #000;
+    --header-color: var(--color);
+    --header-background-color: #555;
 }
 
 main {
