@@ -14,6 +14,9 @@ export default {
         this.setUp();
         this.run();
     },
+    beforeDestroy() {
+        window.cancelAnimationFrame(this.requestId);
+    },
     methods: {
         setUp() {
             this.canvas = document.querySelector("#welcome-canvas");
@@ -70,7 +73,6 @@ export default {
             }
 
             this.removeOldPointSets();
-
             this.requestId = window.requestAnimationFrame(this.run);
         },
 

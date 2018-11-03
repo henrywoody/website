@@ -65,7 +65,7 @@ export default {
         window.scrollTo(0,0);
         const slider = document.querySelector(".top-slide");
         const main = document.querySelector("main");
-        window.setInterval(() => {
+        this.intervalId = window.setInterval(() => {
             const { y, height } = slider.getBoundingClientRect();
             const bottomMargin = 10; // see below for the 10px in .top-slide margin-bottom
             if (height + bottomMargin + y === 0 && main.classList.contains("no-scroll")) {
@@ -74,6 +74,9 @@ export default {
                 main.classList.add("no-scroll");
             }
         }, 500);
+    },
+    beforeDestroy() {
+        window.clearInterval(this.intervalId);
     }
 }
 </script>
