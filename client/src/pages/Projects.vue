@@ -8,17 +8,17 @@
 
         <section
             v-for="projectSection in projectSections"
-            v-bind:key="projectSection.title"
+            :key="projectSection.title"
             class="projects-list"
         >
             <h2>{{ projectSection.title }}</h2>
 
             <ProjectItem
                 v-for="project in projectSection.projects"
-                v-bind:key="project.title"
-                v-bind:title="project.title"
-                v-bind:description="project.description"
-                v-bind:path="project.path"
+                :key="project.title"
+                :title="project.title"
+                :description="project.description"
+                :path="project.path"
             />
         </section>
 

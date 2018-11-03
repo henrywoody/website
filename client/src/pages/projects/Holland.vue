@@ -20,7 +20,7 @@
 
         <CodeBlock
             language="python"
-            v-bind:code="helloWorldCode"
+            :code="helloWorldCode"
         />
 
         <p>
@@ -57,7 +57,7 @@
 
         <CodeBlock
             language="python"
-            v-bind:code="helloWorldGenome"
+            :code="helloWorldGenome"
         />
 
         <GithubLinkIcon href="https://github.com/lambdalife/holland"/>

@@ -1,7 +1,7 @@
 <template>
     <main>
         <div class="welcome">
-            <h1 v-on:click="this.reset">welcome</h1>
+            <h1 @click="this.reset">welcome</h1>
         </div>
         <canvas id="welcome-canvas"></canvas>
     </main>

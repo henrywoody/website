@@ -1,5 +1,5 @@
 <template>
-    <pre><code v-bind:class="language">{{ code }}</code></pre>
+    <pre><code :class="language">{{ code }}</code></pre>
 </template>
 
 <script>

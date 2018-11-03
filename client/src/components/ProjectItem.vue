@@ -1,5 +1,5 @@
 <template>
-    <div v-on:click="this.goToPage" class="project-item">
+    <div @click="this.goToPage" class="project-item">
         <span class="title">{{ title }}</span>
 
         <p>

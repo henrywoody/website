@@ -6,12 +6,12 @@
             Some great sites.
         </p>
 
-        <section v-for="section in sections" v-bind:key="section.title">
+        <section v-for="section in sections" :key="section.title">
             <h2>{{ section.title }}</h2>
 
             <ul>
-                <li v-for="link in section.links" v-bind:key="link.title">
-                    <a v-bind:href="link.href">{{ link.title }}</a>
+                <li v-for="link in section.links" :key="link.title">
+                    <a :href="link.href">{{ link.title }}</a>
                 </li>
             </ul>
         </section>

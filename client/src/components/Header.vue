@@ -4,11 +4,11 @@
             <router-link exact to="/" class="site-title">Henry Woody</router-link>
             <nav>
                 <ul>
-                    <li v-for="link in links" v-bind:key="link.title">
+                    <li v-for="link in links" :key="link.title">
                         <router-link
-                            v-bind:exact="link.exact"
-                            v-bind:to="link.to"
-                            v-bind:title="link.title"
+                            :exact="link.exact"
+                            :to="link.to"
+                            :title="link.title"
                         >
                             {{ link.title }}
                         </router-link>

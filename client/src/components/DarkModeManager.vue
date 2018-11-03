@@ -1,5 +1,5 @@
 <template>
-    <button v-on:click="toggleDarkMode">{{ isDarkModeOn ? "Light" : "Dark" }}</button>
+    <button @click="toggleDarkMode">{{ isDarkModeOn ? "Light" : "Dark" }}</button>
 </template>
 
 <script>
