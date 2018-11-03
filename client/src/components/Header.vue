@@ -56,12 +56,18 @@ export default {
 <style scoped>
 header {
     background-color: var(--header-background-color);
+    width: 100vw;
     height: var(--header-height);
     padding: 0 1rem;
     display: flex;
     flex-flow: row;
     justify-content: space-between;
     align-items: center;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
 header, a {

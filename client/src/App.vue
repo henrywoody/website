@@ -51,12 +51,13 @@ body {
     color: var(--color);
     background-color: var(--background-color);
     margin: 0;
+    overflow: auto;
 
     --dark-mode-transition-time: .3s;
     --dark-mode-transition:
-        var(--dark-mode-transition-time) color,
-        var(--dark-mode-transition-time) background-color,
-        var(--dark-mode-transition-time) fill;
+        color var(--dark-mode-transition-time),
+        background-color var(--dark-mode-transition-time),
+        fill var(--dark-mode-transition-time);
     transition: var(--dark-mode-transition);
 }
 
@@ -71,7 +72,10 @@ body.dark {
 }
 
 main {
-    padding: 0 2rem;
+    padding: 0 2rem 1rem;
+    margin-top: var(--header-height);
+    box-sizing: border-box;
+    overflow: auto;
 }
 
 h1 {
@@ -92,5 +96,13 @@ a {
 button {
         outline: none;
         border: none;
+}
+
+.fixed {
+    position: fixed !important;
+}
+
+.no-scroll {
+    overflow: hidden;
 }
 </style>
