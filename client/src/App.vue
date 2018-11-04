@@ -32,6 +32,7 @@ body {
     --shadow-color: #777;
     --header-color: var(--inverted-color);
     --header-background-color: var(--inverted-background-color);
+    --button-background-color: var(--inverted-color);
 
     --shadow-offset: .1rem;
     --shadow-blur: .2rem;
@@ -69,6 +70,7 @@ body.dark {
     --shadow-color: #000;
     --header-color: var(--color);
     --header-background-color: #555;
+    --button-background-color: #555;
 }
 
 main {
@@ -105,8 +107,17 @@ input {
 }
 
 button {
-        outline: none;
-        border: none;
+    color: var(--color);
+    background-color: var(--button-background-color);
+    height: 1.5rem;
+    outline: none;
+    border: none;
+
+    transition: var(--dark-mode-transition);
+}
+
+button:active {
+    transform: translate(.05rem, .05rem);
 }
 
 .fixed {
@@ -115,5 +126,20 @@ button {
 
 .no-scroll {
     overflow: hidden;
+}
+
+
+input[type="range"] {
+    display: none;
+}
+
+@media all and (min-width: 800px) {
+    input[type="range"] {
+        display: initial;
+    }
+
+    input.range-standin {
+        display: none;
+    }
 }
 </style>

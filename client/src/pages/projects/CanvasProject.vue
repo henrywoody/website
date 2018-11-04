@@ -20,11 +20,11 @@ export default {
     props: {
         title: String,
         setUp: Function,
-        run: Function,
+        update: Function,
     },
     mounted() {
         this.superSetUp();
-        this.superRun();
+        this.run();
 
         window.addEventListener("resize", this.resizeCanvas);
     },
@@ -35,10 +35,9 @@ export default {
     methods: {
         superSetUp() {
             this.resizeCanvas();
-            this.ctx = this.canvas.getContext("2d");
             this.requestId = null;
 
-            this.setUp(this.canvas, this.ctx);
+            this.setUp(this.canvas);
         },
 
         resizeCanvas() {
@@ -47,9 +46,9 @@ export default {
             this.canvas.height = window.innerHeight;
         },
 
-        superRun() {
-            this.run();
-            this.requestId = window.requestAnimationFrame(this.superRun);
+        run() {
+            this.update();
+            this.requestId = window.requestAnimationFrame(this.run);
         }
     }
 }
@@ -64,23 +63,35 @@ canvas {
     left: 0;
 }
 
-p {
+section.description {
     width: 85%;
     max-width: 30rem;
     margin: 0 auto 1rem;
 }
 
 form.controls {
-    width: 50%;
-    margin: 1rem auto 2rem;
+    width: 90%;
+    max-width: 30rem;
+    margin: 1rem auto 1rem;
     display: flex;
     flex-flow: row;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
 form.controls .input-container {
+    height: 100%;
     display: flex;
     flex-flow: column;
+    margin-bottom: 1rem;
+}
+
+form.controls .input-container:not(:first-of-type) {
+    margin-left: .5rem;
+}
+
+form.controls .input-container:not(:last-of-type) {
+    margin-right: .5rem;
 }
 
 form.controls label {

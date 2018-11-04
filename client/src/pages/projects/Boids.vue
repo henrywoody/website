@@ -1,5 +1,5 @@
 <template>
-    <CanvasProject title="Boids" :setUp="setUp" :run="run">
+    <CanvasProject title="Boids" :setUp="setUp" :update="update">
         <template slot="controls">
             <form class="controls" @submit.prevent>
                 <div class="input-container">
@@ -56,15 +56,15 @@ export default {
         }
     },
     methods: {
-        setUp(canvas, ctx) {
+        setUp(canvas) {
             this.canvas = canvas;
-            this.ctx = ctx;
+            this.ctx = this.canvas.getContext("2d");
             this.maxSpeed = 2;
             this.boids = [];
             this.addBoids(100);
         },
 
-        run() {
+        update() {
             this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
             for (const boid of this.boids) {
                 boid.updatePosition(this.boids, this.canvas, this.isFlockingOn, this.areColorsOn);
