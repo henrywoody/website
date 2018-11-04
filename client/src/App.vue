@@ -93,6 +93,17 @@ a {
     transition: var(--dark-mode-transition);
 }
 
+input {
+    color: var(--color);
+    font-size: 1.2rem;
+    background-color: var(--background-color);
+    width: 5rem;
+    outline: none;
+    border: none;
+
+    transition: var(--dark-mode-transition);
+}
+
 button {
         outline: none;
         border: none;
