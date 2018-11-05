@@ -26,8 +26,8 @@ export default {
 
 <style scoped>
 .project-item {
-    padding: 1rem;
-    margin-bottom: 1.5rem;
+    padding: 1rem 1rem 1.5rem;
+    margin-bottom: 1rem;
 
     --tran-timing: .3s;
     transition: var(--tran-timing) box-shadow, var(--tran-timing) transform;
@@ -54,6 +54,7 @@ export default {
 }
 
 p {
-    margin: 1rem 2rem;
+    margin: 1rem 2rem 0;
+    font-size: .9rem;
 }
 </style>
