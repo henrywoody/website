@@ -20,7 +20,7 @@
         </template>
         <template slot="description">
             <p>
-                Boids (bird-oids) are artificial creatures that simulate the flocking behavior of natural birds. They were originally described by Craig W. Reynolds in a <a href="http://www.cs.toronto.edu/~dt/siggraph97-course/cwr87/">1987 paper</a>.
+                Boids (bird-oids) are artificial creatures that simulate the flocking behavior of natural birds. They were originally described by Craig W. Reynolds in a <a href="http://www.cs.toronto.edu/~dt/siggraph97-course/cwr87/">1987 paper</a> on simulating aggregate behavior of groups of individuals.
             </p>
 
             <p>
@@ -34,7 +34,7 @@
             </p>
 
             <p>
-                I've added the 'colors' flocking rule here, which incorporates chromatic distance, in addition to geographic, when each boids considers their neighbors. So in order to be considered a neighbor, a boid must be relatively close spacially and have a similar color. Basically boids will only flock with similarly colored boids if 'colors' is on.
+                I've added the 'colors' flocking rule here, which incorporates chromatic distance, in addition to spacial, when each boids considers their neighbors. So in order to be considered a neighbor, a boid must be relatively close spacially and have a similar color. Basically boids will only flock with similarly colored boids if 'colors' is on.
             </p>
         </template>
     </CanvasProject>

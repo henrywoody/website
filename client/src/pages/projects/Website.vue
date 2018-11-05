@@ -17,7 +17,7 @@
                 <span class="version">Version <code>3.0</code></span>
 
                 <p>
-                    This site is a place for me to share projects I've worked on and try out new ideas in web development. Mostly it's for canvas animations.
+                    This site is where I share projects I've worked on and try out new ideas in web development. Mostly it's for canvas animations. The ability to share your work and ideas on the Internet is what initially drew me to web development.
                 </p>
 
                 <p>
@@ -45,7 +45,7 @@
                 <span class="version">Version <code>1.0</code></span>
 
                 <p>
-                    Using <code>1.0</code>, instead of <code>0.0</code>, is generious for this particular version of the site. Version 1 was written in plain HTML and CSS and was pretty much just a welcome page with a background image.
+                    Using <code>1.0</code>, instead of <code>0.0</code>, is generious for this particular version of the site. Version 1 was pretty much just a welcome page with a background image. Written, as you might imagine, in plain HTML and CSS.
                 </p>
 
             </section>

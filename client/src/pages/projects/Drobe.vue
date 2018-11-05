@@ -4,31 +4,34 @@
 
         <span class="link"><a href="https://drobe.io">drobe.io</a></span>
 
-        <p>
-            Drobe is an application designed to save time and brain power in the morning by picking an outfit for a user to wear. After creating an account, a user can create records of the clothes in their wardrobe.
-        </p>
+        <section class="description">
+            <p>
+                Drobe is an application that picks outfits for users to wear each day. After creating an account, a user can create records of the clothes in their wardrobe. The app was designed to save time and brain power in the morning.
+            </p>
 
-        <p>
-            The most important feature for creating outfits is the related articles of clothing for each article. These are speficied by the user. Essentially the user decides which pants go with which shirts and so on.
-        </p>
+            <p>
 
-        <p>
-            Each article in an outfit is selected probabilistically according to:
-            <ul>
-                <li>The user's preference for that article</li>
-                <li>The weather: temperature and rain</li>
-                <li>The last time the article was worn</li>
-                <li>The other articles so far selected for the outfit</li>
-            </ul>
-        </p>
+                The most important feature for creating outfits is the related articles of clothing for each article. These are specified by the user. The user decides, for example, which pairs of pants go with which shirts.
+            </p>
 
-        <p>
-            Weather data comes from <a href="https://darksky.net/poweredby/">Dark Sky's Weather API</a>. This API gives weather data for a given set of coordinates. Coordinate data comes from <a href="https://developers.google.com/maps/documentation/geocoding/start">Google's Geocoding API</a>.
-        </p>
+            <p>
+                Each article in an outfit is selected probabilistically according to:
+                <ul>
+                    <li>The user's preference for that article</li>
+                    <li>The weather: temperature and rain</li>
+                    <li>The last time the article was worn</li>
+                    <li>The other articles so far selected for the outfit</li>
+                </ul>
+            </p>
 
-        <p>
-            The Drobe server was written in Node using the Express framework. The frontend is in React. The database is Postgres. Drobe is currently hosted on Google Cloud's App Engine.
-        </p>
+            <p>
+                Weather data comes from <a href="https://darksky.net/poweredby/">Dark Sky's Weather API</a>. This API gives weather data for a given set of coordinates. Coordinate data comes from <a href="https://developers.google.com/maps/documentation/geocoding/start">Google's Geocoding API</a>.
+            </p>
+
+            <p>
+                The Drobe server was written in Node using the Express framework. The frontend is in React. The database was originally written in MongoDB, but due to to the (many-to-many) relationships between the data, I recreated the database using Postgres. Drobe is currently hosted on Google Cloud's App Engine.
+            </p>
+        </section>
 
         <GithubLinkIcon href="https://github.com/henrywoody/drobe"/>
     </main>
@@ -54,7 +57,7 @@ export default {
 }
 
 .link a:hover {
-    color: #1bb8d1; /*drobe blue*/
+    color: #1bb8d1; /* drobe blue */
 }
 
 p {

@@ -2,63 +2,86 @@
     <main>
         <h1>Holland</h1>
 
-        <p>
-            Holland is a genetic algorithm library for Python. The package is application-agnostic and can be used on any problem for which there is a way to encode solutions and evalute the success of a potential solution.
-        </p>
+        <section class="description">
+            <p>
+                Holland is a genetic algorithm library for Python. The package is application-agnostic and can be used on any problem for which there is a way to encode solutions and evalute the success of a potential solution. The package is named for <a href="https://en.wikipedia.org/wiki/John_Henry_Holland">John H. Holland</a>, a pioneer in genetic algorithms research.
+            </p>
 
-        <p>
-            Holland can be installed using pip with <code>pip install holland</code>.
-        </p>
+            <p>
+                The genetic algorithm is a search algorithm for finding solutions to problems. It is a metaheuristic, meaning that it is a heuristic for finding heuristics for solving other problems. In order for the genetic algorithm to be used on a problem, two things are required: a way to encode solutions to the problem and a method for evaluating the "fitness" of a possible solution.
+            </p>
 
-        <p>
-            The repository <a href="https://github.com/lambdalife/holland-gym">Holland-Gym</a> contains examples of evolved solutions to some environments from <a href="http://gym.openai.com/">Open AI's Gym</a>.
-        </p>
+            <p>
+                With these two components the general process for the genetic algorithm is:
 
-        <p>
-            Here is a "Hello World!" example:
-        </p>
+                <ol>
+                    <li>Generate initial (random) solutions</li>
+                    <li>Evaluate each solution's fitness</li>
+                    <li>Generate new solutions by performing crossover and mutation on existing solutions according to their fitness</li>
+                    <li>Return to step 2</li>
+                </ol>
+            </p>
 
-        <CodeBlock
-            language="python"
-            :code="helloWorldCode"
-        />
+            <p>
+                For such a simple algorithm, solutions found from employing the genetic algorithm can be quite complex and highly performant.
+            </p>
 
-        <p>
-            With a sample run:
-        </p>
+            <p>
+                Holland can be installed using pip with <code>pip install holland</code>.
+            </p>
 
-        <pre>
-> Generation: 0;    Top Score: 201:     N~flx.JGcu-*
-> Generation: 1;    Top Score: 98:      Xljlw);mj]f 
-> Generation: 2;    Top Score: 64:      =c}kk SmsYf 
-> Generation: 3;    Top Score: 37:      Kcjlk$Vms]f 
-> Generation: 4;    Top Score: 24:      Cdjkn Smshf
-> Generation: 5;    Top Score: 16:      Idjln Vmshf
-> Generation: 6;    Top Score: 14:      Idjln Voshf
-> Generation: 7;    Top Score: 11:      Hdjln Vmslf
-> Generation: 8;    Top Score: 9:       Hdjln Voslf 
-> Generation: 9;    Top Score: 8:       Hdjln Vosle 
-> Generation: 10;   Top Score: 7:       Hdmln Vosle 
-> Generation: 11;   Top Score: 6:       Hdlln Vosle 
-> Generation: 12;   Top Score: 5:       Hdllo Vosle 
-> Generation: 13;   Top Score: 4:       Hdllo Vosle!
-> Generation: 14;   Top Score: 3:       Hello Vosle!
-> Generation: 15;   Top Score: 2:       Hello Wosle!
-> Generation: 16;   Top Score: 2:       Hello Wosle!
-> Generation: 17;   Top Score: 1:       Hello Worle!
-> Generation: 18;   Top Score: 1:       Hello Worle!
-> Generation: 19;   Top Score: 1:       Hello Worle!
-> Generation: 20;   Top Score: 0:       Hello World!
-        </pre>
+            <p>
+                The repository <a href="https://github.com/lambdalife/holland-gym">Holland-Gym</a> contains examples of evolved solutions to some environments from <a href="http://gym.openai.com/">Open AI's Gym</a>.
+            </p>
 
-        <p>
-            Best genome:
-        </p>
+            <h2>Hello World</h2>
 
-        <CodeBlock
-            language="python"
-            :code="helloWorldGenome"
-        />
+            <p>
+                Here is a "Hello World!" example:
+            </p>
+
+            <CodeBlock
+                language="python"
+                :code="helloWorldCode"
+            />
+
+            <p>
+                With a sample run:
+            </p>
+
+            <pre>
+Generation: 0;    Top Score: 201:     N~flx.JGcu-*
+Generation: 1;    Top Score: 98:      Xljlw);mj]f 
+Generation: 2;    Top Score: 64:      =c}kk SmsYf 
+Generation: 3;    Top Score: 37:      Kcjlk$Vms]f 
+Generation: 4;    Top Score: 24:      Cdjkn Smshf
+Generation: 5;    Top Score: 16:      Idjln Vmshf
+Generation: 6;    Top Score: 14:      Idjln Voshf
+Generation: 7;    Top Score: 11:      Hdjln Vmslf
+Generation: 8;    Top Score: 9:       Hdjln Voslf 
+Generation: 9;    Top Score: 8:       Hdjln Vosle 
+Generation: 10;   Top Score: 7:       Hdmln Vosle 
+Generation: 11;   Top Score: 6:       Hdlln Vosle 
+Generation: 12;   Top Score: 5:       Hdllo Vosle 
+Generation: 13;   Top Score: 4:       Hdllo Vosle!
+Generation: 14;   Top Score: 3:       Hello Vosle!
+Generation: 15;   Top Score: 2:       Hello Wosle!
+Generation: 16;   Top Score: 2:       Hello Wosle!
+Generation: 17;   Top Score: 1:       Hello Worle!
+Generation: 18;   Top Score: 1:       Hello Worle!
+Generation: 19;   Top Score: 1:       Hello Worle!
+Generation: 20;   Top Score: 0:       Hello World!
+            </pre>
+
+            <p>
+                Best genome:
+            </p>
+
+            <CodeBlock
+                language="python"
+                :code="helloWorldGenome"
+            />
+        </section>
 
         <GithubLinkIcon href="https://github.com/lambdalife/holland"/>
     </main>
@@ -134,7 +157,7 @@ helloWorldGenome: `{
 </script>
 
 <style scoped>
-p, pre {
+section {
     width: 85%;
     max-width: 30rem;
     margin: 0 auto 1rem;

@@ -35,17 +35,17 @@
         </template>
         <template slot="description">
             <p>
-                A one dimensional cellular automaton is a discrete mathematical model for simulating complex systems. The environment is a linear strip of cells where each cell can have one of several possible states. The simplest interesting example, is a binary state cellular automaton, for example alive or dead. The state of each cell in the next stage, or time step, is determined by its current state and the states of the cells on either side of it.
+                A one dimensional cellular automaton is a discrete mathematical model for simulating complex systems. The environment is a linear strip of cells where each cell can have one of several possible states. The simplest interesting example, is a binary state cellular automaton, for example the states might be interpreted as alive and dead. The state of each cell in the next stage, or time step, is determined by its current state and the states of the cells on either side of it.
             </p>
 
             <p>
-                How the configuration of the three cells (self and neighbors) impact a given cell depends on the selected rule. A rule is a mapping from "parent" cell configurations to cell states. For example, a rule might specify that a cell is alive in the next stage if it and its neighbors are all currently alive and is dead otherwise.
+                How the configuration of the three cells (self and neighbors) impact a given cell depends on the selected rule. A rule is a mapping from current cell configurations to a single cell state. For example, a rule might specify that a cell is alive in the next stage if it and its neighbors are all currently alive and is dead otherwise.
             </p>
 
             <h2>Elementary Cellular Automata</h2>
 
             <p>
-                An elementary cellular automaton is a binary state (e.g. 0 and 1), one dimenstional cellular automata. With two possible states for each cell and three "parent" cells, there are 2<sup>3</sup> possible parent configurations. Here they are:
+                An elementary cellular automaton is a binary state (e.g. 0 and 1), one dimenstional cellular automaton. With two possible states for each cell and three "parent" cells, there are 2<sup>3</sup> possible parent configurations. Here they are:
             </p>
 
             <p class="parent-configs">
