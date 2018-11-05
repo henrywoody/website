@@ -1,5 +1,5 @@
 <template>
-    <button @click="toggleDarkMode">{{ isDarkModeOn ? "Light" : "Dark" }}</button>
+    <button class="btn-dark-mode" @click="toggleDarkMode">{{ isDarkModeOn ? "Light" : "Dark" }}</button>
 </template>
 
 <script>
