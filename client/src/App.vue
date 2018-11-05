@@ -54,6 +54,9 @@ body {
     margin: 0;
     overflow: auto;
 
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+
     --dark-mode-transition-time: .3s;
     --dark-mode-transition:
         color var(--dark-mode-transition-time),
@@ -140,6 +143,16 @@ input[type="range"] {
 
     input.range-standin {
         display: none;
+    }
+}
+
+@media print {
+    header {
+        display: none !important;
+    }
+
+    main {
+        margin-top: 0;
     }
 }
 </style>
