@@ -63,12 +63,6 @@ canvas {
     left: 0;
 }
 
-section.description {
-    width: 85%;
-    max-width: 30rem;
-    margin: 0 auto 1rem;
-}
-
 form.controls {
     width: 90%;
     max-width: 30rem;

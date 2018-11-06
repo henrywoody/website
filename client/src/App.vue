@@ -131,6 +131,12 @@ button:active {
     overflow: hidden;
 }
 
+section.description {
+    width: 85%;
+    max-width: 30rem;
+    margin: 0 auto 1rem;
+}
+
 
 input[type="range"] {
     display: none;
