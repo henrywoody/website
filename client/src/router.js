@@ -4,6 +4,7 @@ import Index from './pages/Index.vue';
 import Projects from './pages/Projects.vue';
 import Links from './pages/Links.vue';
 import Resume from './pages/Resume.vue';
+import NotFound from './pages/404.vue';
 
 import projectRoutes from './pages/projects/routes';
 
@@ -21,6 +22,7 @@ export default new Router({
     routes: [
         ...baseRoutes,
         ...projectRoutes,
+        {path: "*", component: NotFound}
     ],
     scrollBehavior() {
         return {x: 0, y: 0}
