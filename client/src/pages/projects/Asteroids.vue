@@ -83,7 +83,7 @@ export default {
             this.bullets.push(bullet)
         },
         makeRandomAsteroids() {
-            const asteroidCreationProb = Math.log(Math.log(this.time)) * 0.01;
+            const asteroidCreationProb = Math.log(Math.log(this.time)) * 0.008;
             if (Math.random() < asteroidCreationProb) {
                 const numToCreate = Math.floor(Math.random() * 3) + 1;
                 for (let i = 0; i < numToCreate; i++) {
@@ -302,6 +302,27 @@ class Ship {
         ctx.lineTo(...this.position);
         ctx.lineTo(...backSidePoint2);
         ctx.lineTo(...frontPoint);
+        if (this.isAccelerating) {
+            const thrusterDirection = Math.atan2(
+                (this.velocity[1] +  this.size * Math.sin(this.direction))/2,
+                (this.velocity[0] + this.size * Math.cos(this.direction))/2
+            );
+            ctx.moveTo(...this.position);
+            ctx.lineTo(
+                this.position[0] - this.size * Math.cos(thrusterDirection),
+                this.position[1] - this.size * Math.sin(thrusterDirection)
+            );
+            ctx.moveTo(...backSidePoint1);
+            ctx.lineTo(
+                backSidePoint1[0] - this.size/2 * Math.cos(thrusterDirection),
+                backSidePoint1[1] - this.size/2 * Math.sin(thrusterDirection)
+            );
+            ctx.moveTo(...backSidePoint2);
+            ctx.lineTo(
+                backSidePoint2[0] - this.size/2 * Math.cos(thrusterDirection),
+                backSidePoint2[1] - this.size/2 * Math.sin(thrusterDirection)
+            );
+        }
         ctx.stroke();
 
     }
@@ -334,9 +355,12 @@ class Bullet {
     }
 
     draw(ctx) {
+        ctx.lineWidth = 2;
         ctx.beginPath();
         ctx.arc(...this.position, this.size, 0, 2 * Math.PI);
+        ctx.fill();
         ctx.stroke();
+        ctx.lineWidth = 1;
     }
 }
 
@@ -352,8 +376,8 @@ class Asteroid {
             this.speed * Math.sin(direction)
         ];
 
-        const numTiers = 5;
-        this.tier = tier || Math.floor(Math.random() * numTiers);
+        const numTiers = 4;
+        this.tier = tier || (Math.floor(Math.random() * numTiers) + 1);
         this.size = 10 * Math.pow(this.tier, 1.5);
 
         this.isActive = true;
@@ -372,7 +396,7 @@ class Asteroid {
         this.isActive = false;
         const numToCreate = 3;
         if (this.tier > 1) {
-            return Array(numToCreate).fill(0).map(_ => {
+            return Array(numToCreate).fill(0).map(() => {
                 return new Asteroid(
                     [...this.position],
                     Math.random() * 2 * Math.PI,
