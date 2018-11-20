@@ -60,6 +60,8 @@ func serveStatic(filename, contentType string) func(http.ResponseWriter, *http.R
 }
 
 func handleAsteroidsAPI(res http.ResponseWriter, req *http.Request) {
+    enableCors(&res)
+
     switch req.Method {
     case "GET":
         getAsteroidsScores(res, req)
@@ -136,4 +138,10 @@ func postAsteroidsScore(res http.ResponseWriter, req *http.Request) {
     }
 
     res.WriteHeader(http.StatusNoContent)
+}
+
+func enableCors(res *http.ResponseWriter) {
+    (*res).Header().Set("Access-Control-Allow-Origin", "*")
+    (*res).Header().Set("Access-Control-Allow-Methods", "GET, POST")
+    (*res).Header().Set("Access-Control-Allow-Headers", "Content-Type")
 }
