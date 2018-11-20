@@ -9,7 +9,7 @@
                 <ul>
                     <li><i><img src="https://www.shareicon.net/data/128x128/2015/09/24/106406_email_512x512.png"></i> <a href="mailto:henry@henrywoody.com">henry@henrywoody.com</a></li>
                     <li><i><img src="https://github.com/favicon.ico"></i> <a href="https://github.com/henrywoody">github.com/henrywoody</a></li>
-                    <li><i><img src="https://stackoverflow.com/favicon.ico"></i> <a href="https://stackoverflow.com/users/story/8068625">stackoverflow.com/users/story/8068625</a></li>
+                    <li><i><img src="https://stackoverflow.com/favicon.ico"></i> <a href="https://stackoverflow.com/story/henrywoody">stackoverflow.com/story/henrywoody</a></li>
                     <li><i><img src="https://codewars.com/favicon.ico"></i> <a href="https://codewars.com/users/henrywoody">codewars.com/users/henrywoody</a></li>
                 </ul>
             </section>
