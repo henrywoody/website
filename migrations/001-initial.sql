@@ -1,0 +1,5 @@
+CREATE DATABASE website;
+
+CREATE ROLE webboi WITH LOGIN PASSWORD 'dbpassword1';
+
+GRANT ALL PRIVILEGES ON DATABASE website TO webboi;
