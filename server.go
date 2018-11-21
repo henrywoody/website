@@ -85,8 +85,8 @@ func getAsteroidsScores(res http.ResponseWriter, req *http.Request) {
     }
     defer rows.Close()
 
+    responseData := make([]map[string]interface{}, 0)
     var (
-        responseData []map[string]interface{}
         score int
         name string
     )
