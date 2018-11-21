@@ -1,16 +1,25 @@
 <template>
     <div>
+        <span v-if="!gameOver" class="score">Score: {{ score }}</span>
         <canvas></canvas>
         <div v-if="gameOver" class="game-over">
-            <span>Game Over</span>
+            <span class="game-over-message">Game Over</span>
+            <AsteroidsLeaderboard v-if="gameOver" :score="score" :numScores="10"/>
             <button @click="reset">Play Again?</button>
         </div>
+        <input ref="focusAttractor" class="focus-attractor">
     </div>
 </template>
 
 <script>
+import AsteroidsLeaderboard from '../../components/AsteroidsLeaderboard.vue';
+
 export default {
     name: "Asteroids",
+
+    components: {
+        AsteroidsLeaderboard,
+    },
 
     mounted() {
         this.setUpCanvas();
@@ -20,15 +29,18 @@ export default {
         window.addEventListener("keyup", this.handleKeyUp);
         window.addEventListener("keydown", this.handleKeyDown);
     },
+
     beforeDestroy() {
         window.cancelAnimationFrame(this.requestId);
         window.removeEventListener("resize", this.resizeCanvas);
         window.removeEventListener("keyup", this.handleKeyUp);
         window.removeEventListener("keydown", this.handleKeyDown);
     },
+
     data() {
         return {
-            gameOver: false
+            gameOver: false,
+            score: 0,
         }
     },
 
@@ -38,20 +50,28 @@ export default {
             this.ctx = this.canvas.getContext("2d");
             this.requestId = null;
         },
+
         reset() {
             const middleOfCanvas = [this.canvas.width/2, this.canvas.height/2];
             this.ship = new Ship(middleOfCanvas, this.addBullet);
             this.bullets = [];
             this.asteroids = [];
             this.gameOver = false;
-
+            this.score = 0;
             this.time = 0;
+            this.$nextTick(() => {
+                // to take focus away from the name input in the AsteroidsLeaderboard
+                this.$refs.focusAttractor.focus();
+                this.$refs.focusAttractor.blur();
+            });
         },
+
         run() {
             this.update();
             this.draw();
             this.requestId = window.requestAnimationFrame(this.run);
         },
+
         update() {
             const color = document.body.classList.contains("dark") ? "#ffffff" : "#333333";
             this.ctx.fillStyle = color;
@@ -73,15 +93,19 @@ export default {
                 this.time++;
             }
         },
+
         handleKeyUp(event) {
             this.ship.handleUserInput(event, "up")
         },
+
         handleKeyDown(event) {
             this.ship.handleUserInput(event, "down");
         },
+
         addBullet(bullet) {
             this.bullets.push(bullet)
         },
+
         makeRandomAsteroids() {
             const asteroidCreationProb = Math.log(Math.log(this.time)) * 0.008;
             if (Math.random() < asteroidCreationProb) {
@@ -106,6 +130,7 @@ export default {
                 }
             }
         },
+
         removeOutOfBoundsObjects() {
             const filterFunc = e => {
                 const inXBounds = this.xMin <= e.position[0] && e.position[0] <= this.xMax;
@@ -115,19 +140,25 @@ export default {
             this.bullets = this.bullets.filter(filterFunc);
             this.asteroids = this.asteroids.filter(filterFunc);
         },
+
         checkCollisons() {
-            this.checkShipAsteroidCollisons();
+            if (!this.gameOver) {
+                this.checkShipAsteroidCollisons();
+            }
             this.checkBulletAsteroidCollisons();
         },
+
         checkShipAsteroidCollisons() {
             for (const asteroid of this.asteroids) {
                 const distance = getDistanceBetween(asteroid.position, this.ship.position);
                 if (distance <= asteroid.size + this.ship.size/2) {
                     this.ship.crash();
                     this.endGame();
+                    break;
                 }
             }
         },
+
         checkBulletAsteroidCollisons() {
             const newAsteroids = [];
             for (const bullet of this.bullets) {
@@ -136,19 +167,23 @@ export default {
                     if (distance <= asteroid.size + bullet.size) {
                         bullet.hit();
                         newAsteroids.push(...asteroid.split());
+                        this.score += asteroid.score;
                     }
                 }
             }
             this.asteroids.push(...newAsteroids);
         },
+
         removeInactiveObjects() {
             const filterFunc = e => e.isActive;
             this.bullets = this.bullets.filter(filterFunc);
             this.asteroids = this.asteroids.filter(filterFunc);
         },
+
         endGame() {
             this.gameOver = true;
         },
+
         draw() {
             this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
             if (!this.gameOver) {
@@ -161,6 +196,7 @@ export default {
                 asteroid.draw(this.ctx);
             }
         },
+
         resizeCanvas() {
             this.canvas = this.$el.querySelector("canvas");
             this.canvas.width = window.innerWidth;
@@ -377,8 +413,9 @@ class Asteroid {
         ];
 
         const numTiers = 4;
-        this.tier = tier || (Math.floor(Math.random() * numTiers) + 1);
+        this.tier = tier || Math.ceil(Math.random() * numTiers);
         this.size = 10 * Math.pow(this.tier, 1.5);
+        this.score = (numTiers + 1 - this.tier) * 100; // smaller => more points
 
         this.isActive = true;
     }
@@ -423,6 +460,12 @@ function getDistanceBetween(a, b) {
 </script>
 
 <style scoped>
+.score {
+    position: absolute;
+    top: 3rem;
+    right: 1rem;
+}
+
 canvas {
     position: absolute;
     left: 0;
@@ -430,8 +473,8 @@ canvas {
 }
 
 .game-over {
-    --width: 7rem;
-    --height: 4rem;
+    --width: 15rem;
+    --height: 25rem;
     width: var(--width);
     height: var(--height);
     display: flex;
@@ -443,11 +486,24 @@ canvas {
     z-index: 100;
 }
 
+.game-over span.game-over-message {
+    font-size: 1.5rem;
+    margin-bottom: .25rem;
+}
+
 .game-over span {
-    font-size: 1.25rem;
     text-align: center;
-    margin-bottom: .5rem;
     display: block;
 }
 
+.game-over button {
+    width: 8rem;
+    margin: 0 auto;
+}
+
+.focus-attractor {
+    /* this is weird again, but it cant be display: none or visiblility: hidden */
+    color: transparent;
+    height: 0;
+}
 </style>

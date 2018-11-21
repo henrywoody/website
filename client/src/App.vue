@@ -47,7 +47,8 @@ body {
 
     --header-height: 2.5rem;
 
-    font-family: "Open Sans", sans-serif, Arial;
+    --font-family: "Open Sans", sans-serif, Arial;
+    font-family: var(--font-family);
     font-weight: 400;
     color: var(--color);
     background-color: var(--background-color);
@@ -101,6 +102,7 @@ a {
 input {
     color: var(--color);
     font-size: 1.2rem;
+    font-family: var(--font-family);
     background-color: var(--background-color);
     width: 5rem;
     outline: none;
