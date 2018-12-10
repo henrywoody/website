@@ -1,63 +1,11 @@
 package main
 
 import (
-    "net/http"
-    "database/sql"
-    _ "github.com/lib/pq"
-    "encoding/json"
-    "strings"
-    "path"
     "log"
-    "os"
-    "fmt"
+    "strings"
+    "encoding/json"
+    "net/http"
 )
-
-var db *sql.DB
-
-func init() {
-    connStr := fmt.Sprintf(
-        "postgres://%s:%s@%s:%s/%s?connect_timeout=10&sslmode=disable",
-        os.Getenv("DB_USER"),
-        os.Getenv("DB_PASS"),
-        os.Getenv("DB_HOST"),
-        os.Getenv("DB_PORT"),
-        os.Getenv("DB_NAME"),
-    )
-    var err error
-    db, err = sql.Open("postgres", connStr)
-    if err != nil {
-        log.Fatal(err)
-    }
-
-    err = db.Ping()
-    if err != nil {
-        log.Fatal(err)
-    }
-}
-
-func main() {
-    http.HandleFunc("/css/", serveStatic("", "text/css"))
-    http.HandleFunc("/js/", serveStatic("", "application/javascript"))
-    http.HandleFunc("/", serveStatic("/index.html", "text/html"))
-    http.Handle("/favicon.ico", http.NotFoundHandler())
-    http.HandleFunc("/api/asteroids_scores", handleAsteroidsAPI)
-    log.Fatal(http.ListenAndServe(os.Getenv("PORT"), nil))
-    defer db.Close()
-}
-
-func serveStatic(filename, contentType string) func(http.ResponseWriter, *http.Request) {
-    return func(res http.ResponseWriter, req *http.Request) {
-        var filepath string
-        if filename == "" {
-            filepath = path.Join("client/dist/", req.URL.Path)
-        } else {
-            filepath = path.Join("client/dist/", filename)
-        }
-
-        res.Header().Set("Content-Type", contentType)
-        http.ServeFile(res, req, filepath)
-    }
-}
 
 func handleAsteroidsAPI(res http.ResponseWriter, req *http.Request) {
     enableCors(&res)
