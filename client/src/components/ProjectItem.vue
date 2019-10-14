@@ -1,11 +1,11 @@
 <template>
-    <div @click="this.goToPage" class="project-item">
+    <router-link :to="path" class="project-item">
         <span class="title">{{ title }}</span>
 
         <p>
             {{ description }}
         </p>
-    </div>
+    </router-link>
 </template>
 
 <script>
@@ -16,21 +16,18 @@ export default {
         description: String,
         path: String
     },
-    methods: {
-        goToPage() {
-            this.$router.push(this.path);
-        }
-    }
 }
 </script>
 
 <style scoped>
 .project-item {
+    text-decoration: none;
     padding: 1rem 1rem 1.5rem;
     margin-bottom: 1rem;
+    display: block;
 
-    --tran-timing: .3s;
-    transition: var(--tran-timing) box-shadow, var(--tran-timing) transform;
+    --transition-timing: .3s;
+    transition: var(--transition-timing) box-shadow, var(--transition-timing) transform;
 }
 
 .project-item:hover {
@@ -38,7 +35,7 @@ export default {
     transform: var(--box-shadow-translate);
     cursor: pointer;
 
-    --tran-timing: .15s;
+    --transition-timing: .15s;
 }
 
 .project-item:active {
@@ -50,7 +47,7 @@ export default {
 
 .title {
     font-size: 1.25rem;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 p {
