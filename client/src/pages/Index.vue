@@ -168,6 +168,7 @@ main {
     font-size: 3.5rem;
     letter-spacing: .3rem;
     color: var(--color);
+    cursor: pointer;
     text-shadow:
         -1px -1px 0 var(--background-color),
         1px -1px 0 var(--background-color),
