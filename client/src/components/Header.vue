@@ -171,7 +171,7 @@ header {
 
 .site-title {
     font-size: 1.25rem;
-    font-weight: 400;
+    font-weight: 600;
 }
 
 nav ul {

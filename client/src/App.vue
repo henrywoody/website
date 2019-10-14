@@ -28,6 +28,7 @@ body {
     --color: #333;
     --inverted-color: #eee;
     --background-color: #fff;
+    --accent-background-color: #eee;
     --inverted-background-color: #333;
     --shadow-color: #777;
     --header-color: var(--inverted-color);
@@ -70,6 +71,7 @@ body.dark {
     --color: #eee;
     --inverted-color: #333;
     --background-color: #333;
+    --accent-background-color: #555;
     --inverted-background-color: #fff;
     --shadow-color: #000;
     --header-color: var(--color);
@@ -86,12 +88,12 @@ main {
 
 h1 {
     font-size: 2.5rem;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 h2 {
     font-weight: 2rem;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 a {
@@ -162,5 +164,51 @@ input[type="range"] {
     main {
         margin-top: 0;
     }
+}
+
+.quote-container {
+    width: fit-content;
+    margin: 0 auto 2rem;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-end;
+}
+
+.quote-container blockquote {
+    background-color: var(--accent-background-color);
+    width: fit-content;
+    padding: .8rem 1.2rem;
+    margin: 0 0 .5rem;
+    transition: background-color var(--dark-mode-transition-time);
+}
+
+.quote-container .quote-attribution {
+    width: fit-content;
+    padding-right: .5rem;
+}
+
+.quote-container .quote-attribution::before {
+    content: "―";
+}
+
+.image-container {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.image-container img {
+    width: 100%;
+}
+
+.image-container .image-description {
+    font-size: .9rem;
+}
+
+.video-container {
+    width: 100%;
+}
+
+.video-container video {
+    width: 100%;
 }
 </style>

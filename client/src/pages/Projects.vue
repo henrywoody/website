@@ -3,7 +3,7 @@
         <h1>Projects</h1>
 
         <p>
-            Projects are my life. Here are a few of my recent projects. If you're trying to work on something neat, hit me up.
+            Projects are my life.
         </p>
 
         <section
@@ -44,13 +44,18 @@ export default {
                     projects: [
                         {
                             title: "Drobe",
-                            description: "Programmatically curated outfits",
+                            description: "Programmatically curated outfits.",
                             path: "/projects/drobe"
                         },
                         {
                             title: "This Site",
                             description: "$CURR_LOCATION",
                             path: "/projects/website"
+                        },
+                        {
+                            title: "404",
+                            description: "Feeling lost in space?",
+                            path: "/404"
                         }
                     ]
                 },
@@ -59,7 +64,7 @@ export default {
                     projects: [
                         {
                             title: "Holland",
-                            description: "A genetic algorithm for any application",
+                            description: "A genetic algorithm for any application.",
                             path: "/projects/holland"
                         },
                         {
@@ -69,13 +74,28 @@ export default {
                         },
                         {
                             title: "One Dimensional Cellular Automata",
-                            description: "Life at its simplest",
+                            description: "Life at its simplest.",
                             path: "/projects/1d-cellular-automata"
                         },
                         {
                             title: "Two Dimensional Cellular Automata",
-                            description: "Things get a bit more complex",
+                            description: "Things get a bit more complex.",
                             path: "/projects/2d-cellular-automata"
+                        },
+                        {
+                            title: "Snake AI",
+                            description: "A mind of its own.",
+                            path: "/projects/snake-ai"
+                        }
+                    ]
+                },
+                {
+                    title: "Art",
+                    projects: [
+                        {
+                            title: "KandinskyBot",
+                            description: "The world's most advanced artist.",
+                            path: "/projects/kandinsky-bot"
                         }
                     ]
                 }
