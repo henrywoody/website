@@ -96,6 +96,11 @@ export default {
                             title: "KandinskyBot",
                             description: "The world's most advanced artist.",
                             path: "/projects/kandinsky-bot"
+                        },
+                        {
+                            title: "Barnsley Fern",
+                            description: "The fractal fern.",
+                            path: "/projects/barnsley-fern"
                         }
                     ]
                 }

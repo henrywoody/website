@@ -6,6 +6,7 @@ import ODCA from './ODCA.vue';
 import TDCA from './TDCA.vue';
 import KandinskyBot from './KandinskyBot.vue';
 import SnakeAI from './SnakeAI.vue';
+import BarnsleyFern from './BarnsleyFern.vue';
 
 export default [
     {path: "/projects/drobe", component: Drobe},
@@ -16,4 +17,5 @@ export default [
     {path: "/projects/2d-cellular-automata", component: TDCA},
     {path: "/projects/kandinsky-bot", component: KandinskyBot},
     {path: "/projects/snake-ai", component: SnakeAI},
+    {path: "/projects/barnsley-fern", component: BarnsleyFern},
 ]
