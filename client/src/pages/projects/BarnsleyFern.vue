@@ -1,5 +1,18 @@
 <template>
     <CanvasProject title="Barnsley Fern" :setUp="setUp" :update="update">
+        <template slot="controls">
+            <form class="controls" @submit.prevent>
+                <div class="input-container">
+                    <label for="renderSpeed">Render Speed</label>
+                    <input id="renderSpeed" type="number" name="renderSpeed" v-model="renderSpeed" @change="updateRenderSpeed">
+                </div>
+
+                <div class="input-container">
+                    <button type="button" @click="reset">Reset</button>
+                </div>
+            </form>
+        </template>
+
         <template slot="description">
             <p>
                 The Barnsley fern is a fractal designed to look like <a href="https://en.wikipedia.org/wiki/Asplenium_adiantum-nigrum">black spleenwort</a>. The fractal is named for <a href="https://en.wikipedia.org/wiki/Michael_Barnsley">Michael Barnsley</a>.
@@ -57,6 +70,7 @@ export default {
     },
     data() {
         return {
+            renderSpeed: 75,
             rules: [
                 {
                     generates: "the stem",
@@ -94,10 +108,27 @@ export default {
             this.y = 0;
         },
 
+        reset() {
+            this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+            this.setUp(this.canvas);
+        },
+
         update() {
             this.ctx.fillStyle = this.color;
             this.ctx.strokeStyle = this.color;
 
+            const imageDimensions = this.getImageDimensions();
+
+            for (let i = 0; i < (this.renderSpeed || 0); i++) {
+                this.drawPixel(this.x, this.y, imageDimensions);
+
+                const { nextX, nextY } = getNextPosition(this.x, this.y);
+                this.x = nextX;
+                this.y = nextY;
+            }
+        },
+
+        getImageDimensions() {
             const ratio = 1;
             const ratioWidth = this.canvas.height * ratio;
             const ratioHeight = this.canvas.width / ratio;
@@ -114,15 +145,16 @@ export default {
             const horizontalPadding = (this.canvas.width - imgWidth) / 2;
             const verticalPadding = (this.canvas.height - imgHeight) / 2;
 
+            return { imgWidth, imgHeight, horizontalPadding, verticalPadding }
+        },
+
+        drawPixel(x, y, { imgWidth, imgHeight, horizontalPadding, verticalPadding }) {
             this.ctx.fillRect(
-                imgWidth * (this.x + 3) / 6 + horizontalPadding,
-                imgHeight - imgHeight * ((this.y + 2) / 14) + verticalPadding,
+                imgWidth * (x + 3) / 6 + horizontalPadding,
+                imgHeight - imgHeight * ((y + 2) / 14) + verticalPadding,
                 1,
                 1,
             );
-            const { nextX, nextY } = getNextPosition(this.x, this.y);
-            this.x = nextX;
-            this.y = nextY;
         },
     }
 }
