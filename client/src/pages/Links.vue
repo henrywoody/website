@@ -11,7 +11,7 @@
 
             <ul>
                 <li v-for="link in section.links" :key="link.title">
-                    <a :href="link.href">{{ link.title }}</a>
+                    <ExternalLink :href="link.href">{{ link.title }}</ExternalLink>
                 </li>
             </ul>
         </section>
@@ -19,8 +19,13 @@
 </template>
 
 <script>
+import ExternalLink from "../components/ExternalLink";
+
 export default {
     name: "Links",
+    components: {
+        ExternalLink,
+    },
     data() {
         const sections = [
             {
@@ -90,7 +95,7 @@ export default {
                 })
             }
         ]
-        
+
         return { sections }
     }
 }

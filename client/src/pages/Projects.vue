@@ -23,18 +23,20 @@
         </section>
 
         <p>
-            Check out my <a href="https://github.com/henrywoody">GitHub page</a> for more!
+            Check out my <ExternalLink href="https://github.com/henrywoody">GitHub page</ExternalLink> for more!
         </p>
     </main>
 </template>
 
 <script>
-import ProjectItem from '../components/ProjectItem.vue';
+import ProjectItem from "../components/ProjectItem";
+import ExternalLink from "../components/ExternalLink";
 
 export default {
     name: "Projects",
     components: {
-        ProjectItem
+        ProjectItem,
+        ExternalLink,
     },
     data() {
         return {

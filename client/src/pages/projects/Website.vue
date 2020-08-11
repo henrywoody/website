@@ -54,12 +54,12 @@
 </template>
 
 <script>
-import GithubLinkIcon from '../../components/GithubLinkIcon.vue';
+import GithubLinkIcon from "../../components/GithubLinkIcon";
 
 export default {
     name: "Website",
     components: {
-        GithubLinkIcon
+        GithubLinkIcon,
     },
     mounted() {
         window.scrollTo(0,0);

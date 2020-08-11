@@ -14,7 +14,7 @@
             </div>
 
             <p>
-                See the Github repository's <a href="https://github.com/henrywoody/snake-ai/blob/master/gallery">gallery</a> for more sample runs, corresponding genomes are in <a href="https://github.com/henrywoody/snake-ai/blob/master/samples">samples</a>.
+                See the Github repository's <ExternalLink href="https://github.com/henrywoody/snake-ai/blob/master/gallery">gallery</ExternalLink> for more sample runs, corresponding genomes are in <ExternalLink href="https://github.com/henrywoody/snake-ai/blob/master/samples">samples</ExternalLink>.
             </p>
 
             <h2>Snake Anatomy</h2>
@@ -33,11 +33,13 @@
 </template>
 
 <script>
-import GithubLinkIcon from "../../components/GithubLinkIcon.vue";
+import ExternalLink from "../../components/ExternalLink";
+import GithubLinkIcon from "../../components/GithubLinkIcon";
 
 export default {
     name: "SnakeAI",
     components: {
+        ExternalLink,
         GithubLinkIcon,
     }
 }

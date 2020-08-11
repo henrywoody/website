@@ -20,7 +20,7 @@
         </template>
         <template slot="description">
             <p>
-                Boids (bird-oids) are artificial creatures that simulate the flocking behavior of natural birds. They were originally described by Craig W. Reynolds in a <a href="http://www.cs.toronto.edu/~dt/siggraph97-course/cwr87/">1987 paper</a> on simulating aggregate behavior of groups of individuals.
+                Boids (bird-oids) are artificial creatures that simulate the flocking behavior of natural birds. They were originally described by Craig W. Reynolds in a <ExternalLink href="http://www.cs.toronto.edu/~dt/siggraph97-course/cwr87/">1987 paper</ExternalLink> on simulating aggregate behavior of groups of individuals.
             </p>
 
             <p>
@@ -41,12 +41,14 @@
 </template>
 
 <script>
-import CanvasProject from './CanvasProject.vue';
+import CanvasProject from "./CanvasProject";
+import ExternalLink from "../../components/ExternalLink";
 
 export default {
     name: "Boids",
     components: {
-        CanvasProject
+        CanvasProject,
+        ExternalLink,
     },
     data() {
         return {

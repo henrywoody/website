@@ -4,7 +4,7 @@
 
         <section class="description">
             <p>
-                Holland is a genetic algorithm library for Python. The package is application-agnostic and can be used on any problem for which there is a way to encode solutions and evalute the success of a potential solution. The package is named for <a href="https://en.wikipedia.org/wiki/John_Henry_Holland">John H. Holland</a>, a pioneer in genetic algorithms research.
+                Holland is a genetic algorithm library for Python. The package is application-agnostic and can be used on any problem for which there is a way to encode solutions and evalute the success of a potential solution. The package is named for <ExternalLink href="https://en.wikipedia.org/wiki/John_Henry_Holland">John H. Holland</ExternalLink>, a pioneer in genetic algorithms research.
             </p>
 
             <p>
@@ -31,7 +31,7 @@
             </p>
 
             <p>
-                The repository <a href="https://github.com/lambdalife/holland-gym">Holland-Gym</a> contains examples of evolved solutions to some environments from <a href="http://gym.openai.com/">Open AI's Gym</a>.
+                The repository <ExternalLink href="https://github.com/lambdalife/holland-gym">Holland-Gym</ExternalLink> contains examples of evolved solutions to some environments from <ExternalLink href="http://gym.openai.com/">Open AI's Gym</ExternalLink>.
             </p>
 
             <h2>Hello World</h2>
@@ -51,18 +51,18 @@
 
             <pre>
 Generation: 0;    Top Score: 201:     N~flx.JGcu-*
-Generation: 1;    Top Score: 98:      Xljlw);mj]f 
-Generation: 2;    Top Score: 64:      =c}kk SmsYf 
-Generation: 3;    Top Score: 37:      Kcjlk$Vms]f 
+Generation: 1;    Top Score: 98:      Xljlw);mj]f
+Generation: 2;    Top Score: 64:      =c}kk SmsYf
+Generation: 3;    Top Score: 37:      Kcjlk$Vms]f
 Generation: 4;    Top Score: 24:      Cdjkn Smshf
 Generation: 5;    Top Score: 16:      Idjln Vmshf
 Generation: 6;    Top Score: 14:      Idjln Voshf
 Generation: 7;    Top Score: 11:      Hdjln Vmslf
-Generation: 8;    Top Score: 9:       Hdjln Voslf 
-Generation: 9;    Top Score: 8:       Hdjln Vosle 
-Generation: 10;   Top Score: 7:       Hdmln Vosle 
-Generation: 11;   Top Score: 6:       Hdlln Vosle 
-Generation: 12;   Top Score: 5:       Hdllo Vosle 
+Generation: 8;    Top Score: 9:       Hdjln Voslf
+Generation: 9;    Top Score: 8:       Hdjln Vosle
+Generation: 10;   Top Score: 7:       Hdmln Vosle
+Generation: 11;   Top Score: 6:       Hdlln Vosle
+Generation: 12;   Top Score: 5:       Hdllo Vosle
 Generation: 13;   Top Score: 4:       Hdllo Vosle!
 Generation: 14;   Top Score: 3:       Hello Vosle!
 Generation: 15;   Top Score: 2:       Hello Wosle!
@@ -88,14 +88,16 @@ Generation: 20;   Top Score: 0:       Hello World!
 </template>
 
 <script>
-import CodeBlock from '../../components/CodeBlock.vue';
-import GithubLinkIcon from '../../components/GithubLinkIcon.vue';
+import CodeBlock from "../../components/CodeBlock";
+import ExternalLink from "../../components/ExternalLink";
+import GithubLinkIcon from "../../components/GithubLinkIcon";
 
 export default {
     name: "Holland",
     components: {
-        GithubLinkIcon,
         CodeBlock,
+        ExternalLink,
+        GithubLinkIcon,
     },
     data() {
         return {

@@ -15,7 +15,7 @@
 
         <template slot="description">
             <p>
-                The Barnsley fern is a fractal designed to look like <a href="https://en.wikipedia.org/wiki/Asplenium_adiantum-nigrum">black spleenwort</a>. The fractal is named for <a href="https://en.wikipedia.org/wiki/Michael_Barnsley">Michael Barnsley</a>.
+                The Barnsley fern is a fractal designed to look like <ExternalLink href="https://en.wikipedia.org/wiki/Asplenium_adiantum-nigrum">black spleenwort</ExternalLink>. The fractal is named for <ExternalLink href="https://en.wikipedia.org/wiki/Michael_Barnsley">Michael Barnsley</ExternalLink>.
             </p>
 
             <p>
@@ -54,19 +54,21 @@
             </div>
 
             <p>
-                Check out the <a href="https://en.wikipedia.org/wiki/Barnsley_fern">Wikipedia article</a> for more.
+                Check out the <ExternalLink href="https://en.wikipedia.org/wiki/Barnsley_fern">Wikipedia article</ExternalLink> for more.
             </p>
         </template>
     </CanvasProject>
 </template>
 
 <script>
-import CanvasProject from './CanvasProject.vue';
+import CanvasProject from "./CanvasProject";
+import ExternalLink from "../../components/ExternalLink";
 
 export default {
     name: "BarnsleyFern",
     components: {
         CanvasProject,
+        ExternalLink,
     },
     data() {
         return {

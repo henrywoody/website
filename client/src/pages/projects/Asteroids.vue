@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import AsteroidsLeaderboard from '../../components/AsteroidsLeaderboard.vue';
+import AsteroidsLeaderboard from "../../components/AsteroidsLeaderboard";
 
 export default {
     name: "Asteroids",

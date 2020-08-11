@@ -17,7 +17,7 @@
 
             <div class="image-container">
                 <img src="https://camo.githubusercontent.com/bad186dcd807c197afbc3f65bfdf3d80b7d12305/68747470733a2f2f7777772e77617373696c796b616e64696e736b792e6e65742f696d616765732f776f726b732f35302e6a7067" alt="Composition VIII">
-                <span class="image-description">Kandinsky, W. (1923). Composition VIII [Painting]. <a href="https://www.wassilykandinsky.net">Source</a>.</span>
+                <span class="image-description">Kandinsky, W. (1923). Composition VIII [Painting]. <ExternalLink href="https://www.wassilykandinsky.net">Source</ExternalLink>.</span>
             </div>
 
             <p>
@@ -44,11 +44,11 @@
             </div>
 
             <p>
-                More samples in the <a href="https://github.com/henrywoody/kandinsky-bot/tree/master/samples">samples directory</a> on Github.
+                More samples in the <ExternalLink href="https://github.com/henrywoody/kandinsky-bot/tree/master/samples">samples directory</ExternalLink> on Github.
             </p>
 
             <p>
-                Kandinsky bot also has an Instagram account that shows images it's generated. Check it out: <a href="https://www.instagram.com/kandinskybot">@KandinskyBot</a>.
+                Kandinsky bot also has an Instagram account that shows images it's generated. Check it out: <ExternalLink href="https://www.instagram.com/kandinskybot">@KandinskyBot</ExternalLink>.
             </p>
         </section>
 
@@ -57,11 +57,13 @@
 </template>
 
 <script>
-import GithubLinkIcon from '../../components/GithubLinkIcon.vue';
+import ExternalLink from "../../components/ExternalLink";
+import GithubLinkIcon from "../../components/GithubLinkIcon";
 
 export default {
     name: "KandinskyBot",
     components: {
+        ExternalLink,
         GithubLinkIcon,
     }
 }

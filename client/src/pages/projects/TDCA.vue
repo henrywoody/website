@@ -40,7 +40,7 @@
             <h2>Game of Life</h2>
 
             <p>
-                <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Conway's Game of Life</a> is a classic rule for two dimensional cellular automata. There are two possible states, generally interpreted as alive and dead, and the system uses the Moore neighborhood. The rules are as follows:
+                <ExternalLink href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Conway's Game of Life</ExternalLink> is a classic rule for two dimensional cellular automata. There are two possible states, generally interpreted as alive and dead, and the system uses the Moore neighborhood. The rules are as follows:
 
                 <ol>
                     <li>Any living cell with fewer than two live neighbors dies from isolation</li>
@@ -54,12 +54,14 @@
 </template>
 
 <script>
-import CanvasProject from './CanvasProject.vue';
+import CanvasProject from "./CanvasProject";
+import ExternalLink from "../../components/ExternalLink";
 
 export default {
     name: "TDCA",
     components: {
         CanvasProject,
+        ExternalLink,
     },
     data() {
         return {

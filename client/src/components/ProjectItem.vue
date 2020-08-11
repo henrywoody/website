@@ -40,7 +40,7 @@ export default {
 
 .project-item:active {
     box-shadow: var(--box-shadow-inset);
-    transform: var(--box-shadow-inset-translate);    
+    transform: var(--box-shadow-inset-translate);
 
     transition: .1s;
 }

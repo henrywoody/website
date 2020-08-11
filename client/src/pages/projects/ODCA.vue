@@ -68,19 +68,21 @@
             </p>
 
             <p>
-                See this <a href="http://mathworld.wolfram.com/ElementaryCellularAutomaton.html">WolframMathWorld article</a> for more.
+                See this <ExternalLink href="http://mathworld.wolfram.com/ElementaryCellularAutomaton.html">WolframMathWorld article</ExternalLink> for more.
             </p>
         </template>
     </CanvasProject>
 </template>
 
 <script>
-import CanvasProject from './CanvasProject.vue';
+import CanvasProject from "./CanvasProject";
+import ExternalLink from "../../components/ExternalLink";
 
 export default {
     name: "ODCA",
     components: {
-        CanvasProject
+        CanvasProject,
+        ExternalLink,
     },
     data() {
         return {
@@ -90,7 +92,7 @@ export default {
             randomRules: true,
             speed: 6,
         }
-    }, 
+    },
     methods: {
         setUp(canvas) {
             this.canvas = canvas;

@@ -2,7 +2,7 @@
     <main>
         <h1>Drobe</h1>
 
-        <span class="link"><a href="https://drobe.io">drobe.io</a></span>
+        <span class="link"><ExternalLink href="https://drobe.io">drobe.io</ExternalLink></span>
 
         <section class="description">
             <p>
@@ -25,7 +25,7 @@
             </p>
 
             <p>
-                Weather data comes from <a href="https://darksky.net/poweredby/">Dark Sky's Weather API</a>. This API gives weather data for a given set of coordinates. Coordinate data comes from <a href="https://developers.google.com/maps/documentation/geocoding/start">Google's Geocoding API</a>.
+                Weather data comes from <ExternalLink href="https://darksky.net/poweredby/">Dark Sky's Weather API</ExternalLink>. This API gives weather data for a given set of coordinates. Coordinate data comes from <ExternalLink href="https://developers.google.com/maps/documentation/geocoding/start">Google's Geocoding API</ExternalLink>.
             </p>
 
             <p>
@@ -38,12 +38,14 @@
 </template>
 
 <script>
-import GithubLinkIcon from '../../components/GithubLinkIcon.vue';
+import ExternalLink from "../../components/ExternalLink";
+import GithubLinkIcon from "../../components/GithubLinkIcon";
 
 export default {
     name: "Drobe",
     components: {
-        GithubLinkIcon
+        ExternalLink,
+        GithubLinkIcon,
     }
 }
 </script>
