@@ -27,15 +27,15 @@ func main() {
 }
 
 func serveStatic(filename, contentType string) func(http.ResponseWriter, *http.Request) {
-	return func(res http.ResponseWriter, req *http.Request) {
+	return func(w http.ResponseWriter, r *http.Request) {
 		var filepath string
 		if filename == "" {
-			filepath = path.Join("client/dist/", req.URL.Path)
+			filepath = path.Join("client/dist/", r.URL.Path)
 		} else {
 			filepath = path.Join("client/dist/", filename)
 		}
 
-		res.Header().Set("Content-Type", contentType)
-		http.ServeFile(res, req, filepath)
+		w.Header().Set("Content-Type", contentType)
+		http.ServeFile(w, r, filepath)
 	}
 }
