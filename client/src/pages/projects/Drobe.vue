@@ -2,7 +2,9 @@
     <main>
         <h1>Drobe</h1>
 
-        <span class="link"><ExternalLink href="https://drobe.io">drobe.io</ExternalLink></span>
+        <div class="link-container">
+            <ExternalLink href="https://drobe.io">drobe.io</ExternalLink>
+        </div>
 
         <section class="description">
             <p>
@@ -51,14 +53,13 @@ export default {
 </script>
 
 <style scoped>
-.link {
+.link-container {
     font-size: 1.1rem;
     text-align: center;
     margin: 0 auto 1rem;
-    display: block;
 }
 
-.link a:hover {
+.link-container a:hover {
     color: #1bb8d1; /* drobe blue */
 }
 

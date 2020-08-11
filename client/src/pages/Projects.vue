@@ -47,17 +47,17 @@ export default {
                         {
                             title: "Drobe",
                             description: "Programmatically curated outfits.",
-                            path: "/projects/drobe"
+                            path: "/projects/drobe",
                         },
                         {
                             title: "This Site",
                             description: "$CURR_LOCATION",
-                            path: "/projects/website"
+                            path: "/projects/website",
                         },
                         {
                             title: "404",
-                            description: "Feeling lost in space?",
-                            path: "/404"
+                            description: "Feeling lost in cyberspace?",
+                            path: "/404",
                         }
                     ]
                 },
@@ -67,27 +67,27 @@ export default {
                         {
                             title: "Holland",
                             description: "A genetic algorithm for any application.",
-                            path: "/projects/holland"
+                            path: "/projects/holland",
                         },
                         {
                             title: "Boids",
                             description: "Birds of a feather...",
-                            path: "/projects/boids"
+                            path: "/projects/boids",
                         },
                         {
                             title: "One Dimensional Cellular Automata",
                             description: "Life at its simplest.",
-                            path: "/projects/1d-cellular-automata"
+                            path: "/projects/1d-cellular-automata",
                         },
                         {
                             title: "Two Dimensional Cellular Automata",
                             description: "Things get a bit more complex.",
-                            path: "/projects/2d-cellular-automata"
+                            path: "/projects/2d-cellular-automata",
                         },
                         {
                             title: "Snake AI",
                             description: "A mind of its own.",
-                            path: "/projects/snake-ai"
+                            path: "/projects/snake-ai",
                         }
                     ]
                 },
@@ -97,15 +97,25 @@ export default {
                         {
                             title: "KandinskyBot",
                             description: "The world's most advanced artist.",
-                            path: "/projects/kandinsky-bot"
+                            path: "/projects/kandinsky-bot",
                         },
                         {
                             title: "Barnsley Fern",
                             description: "The fractal fern.",
-                            path: "/projects/barnsley-fern"
+                            path: "/projects/barnsley-fern",
                         }
                     ]
-                }
+                },
+                {
+                    title: "CSS Projects",
+                    projects: [
+                        {
+                            title: "CSS Flags",
+                            description: "The world's flags recreated in CSS.",
+                            path: "/projects/css-flags",
+                        }
+                    ],
+                },
             ]
         }
     }
