@@ -18,8 +18,10 @@ func main() {
 	defer db.Close()
 	http.HandleFunc("/css/", serveStatic("", "text/css"))
 	http.HandleFunc("/js/", serveStatic("", "application/javascript"))
+	http.HandleFunc("/icon/", serveStatic("", "image/png"))
+	http.HandleFunc("/favicon.ico", serveStatic("/favicon.ico", "image/ico"))
+	http.HandleFunc("/manifest.json", serveStatic("/manifest.json", "application/json"))
 	http.HandleFunc("/", serveStatic("/index.html", "text/html"))
-	http.Handle("/favicon.ico", http.NotFoundHandler())
 	http.HandleFunc("/api/asteroids_scores", handleAsteroidsAPI)
 
 	log.Printf("Server is running on port %s\n", os.Getenv("PORT"))
