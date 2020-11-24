@@ -13,7 +13,7 @@
     }
   },
   "dependencies": {
-    "highlight.js": "^9.13.1",
+    "highlight.js": "^10.1.2",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1"
   },
